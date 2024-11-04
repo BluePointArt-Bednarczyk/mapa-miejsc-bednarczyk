@@ -1,17 +1,52 @@
 /* src/App.css */
 
-body, html, #root {
+body,
+html,
+#root,
+.App {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
+  /* Optional: Set a clean font */
 }
 
 .App {
-  height: 100vh;
-  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
+  /* Light background for contrast */
 }
 
 .leaflet-container {
-  height: 100%;
-  width: 100%;
+  height: 80vh;
+  /* Adjust height as needed */
+  width: 80vw;
+  /* Adjust width as needed */
+  border-radius: 12px;
+  /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* Subtle shadow for depth */
+}
+
+/* Optional: Hover effect to adjust filters */
+.leaflet-container:hover {
+  filter: brightness(100%) contrast(110%) saturate(130%) grayscale(50%);
+  /* blur(px) grayscale(%) invert(%) opacity(%) drop-shadow(offsetX offsetY blurRadius color) hue-rotate(20deg)*/
+}
+
+/* Optional: Customize Popup Appearance */
+.leaflet-popup-content-wrapper {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.leaflet-popup-tip {
+  background: white;
+}
+
+.leaflet-layer {
+  filter: brightness(90%) blur(1px) contrast(90%) saturate(90%) sepia(70%);
 }

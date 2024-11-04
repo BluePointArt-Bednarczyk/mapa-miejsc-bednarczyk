@@ -10,6 +10,8 @@ import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
+import { markersWithIcons } from './data/markersWithIcons';
+
 
 // Default icon fix for markersmmm
 delete (L.Icon.Default.prototype as any)._getIconUrl;
@@ -21,11 +23,11 @@ L.Icon.Default.mergeOptions({
 });
 
 const App: React.FC = () => {
-  const position: [number, number] = [51.505, -0.09];
+  const position: [number, number] = [51.49354740842114, -0.2372724997073291];//51.49354740842114, -0.2372724997073291
 
   return (
     <div className="App" style={{ height: '100vh', width: '100%' }}>
-      <MapContainer center={position} zoom={13} scrollWheelZoom={false} style={{ height: '100%', width: '100%' }}>
+      <MapContainer center={position} zoom={13} scrollWheelZoom={true} style={{ height: '100%', width: '100%' }}>
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">
             OpenStreetMap
@@ -33,11 +35,12 @@ const App: React.FC = () => {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
-        <Marker position={position}>
-          <Popup>
-            A pretty CSS3 popup. <br /> Easily customizable.
-          </Popup>
-        </Marker>
+        {markersWithIcons.map((marker) => (
+          <Marker key={marker.id} position={marker.position} icon={marker.customIcon}>
+            {marker.popup && <Popup>{marker.popup}</Popup>}
+          </Marker>
+        ))}
+
       </MapContainer>
     </div>
   );
