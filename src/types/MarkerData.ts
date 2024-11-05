@@ -5,5 +5,5 @@ export interface MarkerData {
     iconSize?: [number, number]; // Adjust size as needed
     iconAnchor?: [number, number]; // Adjust anchor as needed
     popupAnchor?: [number, number];
-    popup?: string; // Optional popup content
+    popup?: React.ReactNode;
 }
