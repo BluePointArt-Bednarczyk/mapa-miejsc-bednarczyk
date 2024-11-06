@@ -59,7 +59,7 @@ export const markers: MarkerData[] = [
         popup: `Holders Hill Road, NW7 1NB – HENDON CREMATORIUM. The burial place of Krystyna and Czesław Bednarczyk. / Miejsce pochówku Krystyny i Czesława Bednarczyków.`,
     },
     {
-        id: 1,
+        id: 4,
         position: [51.556490254129386, -0.19422511504655884],
         icon: markerDomPisarza,
         iconSize: [60, 60], // Adjust size as needed
@@ -68,7 +68,7 @@ export const markers: MarkerData[] = [
         popup: `312 Finchley Road, NW3 7AG – WRITER'S HOUSE / DOM PISARZA. Owned by the Union of Polish Writers (1947–1971). For many years the headquarters of the Union. The following people lived there at various times Krystyna and Czesław Bednarczyk, Stanisław Gliwa, Gustaw Herling-Grudziński. The administrator of the house was the poet Tadeusz Sułkowski. / Własność ZPPnO (1947–1971). Przez wiele lat siedziba Związku. W różnych okresach mieszkali tam, m.in.: Bednarczykowie, Gliwa, Herling‑Grudziński. Administratorem domu był poeta Sułkowski. `,
     },
     {
-        id: 2,
+        id: 5,
         position: [51.504462979032674, -0.11467611426668353],
         icon: markerOficyna,
         iconSize: [60, 60], // Adjust size as needed
@@ -77,7 +77,7 @@ export const markers: MarkerData[] = [
         popup: `146 Bridge Arch Sutton Walk, SE1 7ND – POETS AND PAINTERS' PRESS / OFICYNA POETÓW I MALARZY  (1954–1991). The residence of the Bednarczyks’ Press; called often “Press under the Arcades” or “under the Bridge". /Siedziba  wydawnictwa Bednarczyków, zwanego często “Drukarnią pod arkadami” lub “Drukarnią pod mostem”. `,
     },
     {
-        id: 3,
+        id: 6,
         position: [51.505140821601614, -0.11673971504813643],
         icon: markerTopolski,
         iconSize: [60, 60], // Adjust size as needed
@@ -86,7 +86,7 @@ export const markers: MarkerData[] = [
         popup: `Arch 158, Hungerford Arches, Belvedere Rd, SE1 8XX – TOPOLSKI STUDIO (1951–1989). The artist's studio, Feliks Topolski, a longtime friend and collaborator of the Bednarczyks. / Pracownia artysty, Feliksa Topolskiego, wieloletniego przyjaciela i współpracownika Bednarczyków.`,
     },
     {
-        id: 3,
+        id: 7,
         position: [51.480591751613595, -0.16651458078247539],
         icon: markerAgenda,
         iconSize: [60, 60], // Adjust size as needed
