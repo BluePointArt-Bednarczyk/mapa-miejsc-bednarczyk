@@ -4,7 +4,7 @@
     {
       "type": "Feature",
       "properties": {
-        "name": "Bednarczyk Route"
+        "name": "Route Connecting Bednarczyk's Places"
       },
       "geometry": {
         "type": "LineString",

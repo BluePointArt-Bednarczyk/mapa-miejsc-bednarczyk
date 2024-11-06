@@ -28,7 +28,7 @@ const App: React.FC = () => {
 
   // Fetch the GeoJSON data from the public folder
   useEffect(() => {
-    fetch('src/data/mydata.geojson') // Path to your external GeoJSON file
+    fetch('src/data/route.geojson') // Path to your external GeoJSON file
       .then((response) => response.json())  // Parse the JSON response
       .then((data) => setGeoData(data))     // Set the data in state
       .catch((error) => console.error('Error loading GeoJSON:', error)); // Handle errors
@@ -55,8 +55,8 @@ const App: React.FC = () => {
             data={geoData}
             style={{
               color: '#BD60A5',   // Line color set to #BD60A5
-              weight: 8,           // Line thickness
-              opacity: 0.5         // Line opacity
+              weight: 10,           // Line thickness
+              opacity: 0.8         // Line opacity
             }}
           />
         )}
