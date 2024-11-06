@@ -2,13 +2,13 @@
 import React from 'react'; // Add this import
 
 
-import markerPosk from '../assets/markers/posk.png';
-import markerDomBednarczykow from '../assets/markers/dom-bednarczykow.png';
-import markerKrematorium from '../assets/markers/krematorium.png';
-import markerDomPisarza from '../assets/markers/dom-pisarza.png';
-import markerOficyna from '../assets/markers/oficyna-poetow-malarzy.png';
-import markerTopolski from '../assets/markers/topolski-studio.png';
-import markerAgenda from '../assets/markers/agenda.png';
+import markerPosk from '/assets/markers/posk.png';
+import markerDomBednarczykow from '/assets/markers/dom-bednarczykow.png';
+import markerKrematorium from '/assets/markers/krematorium.png';
+import markerDomPisarza from '/assets/markers/dom-pisarza.png';
+import markerOficyna from '/assets/markers/oficyna-poetow-malarzy.png';
+import markerTopolski from '/assets/markers/topolski-studio.png';
+import markerAgenda from '/assets/markers/agenda.png';
 
 // Import more marker icons as needed
 

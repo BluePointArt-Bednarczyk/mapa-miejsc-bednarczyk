@@ -30,7 +30,7 @@ const App: React.FC = () => {
 
   // Fetch the GeoJSON data from the public folder
   useEffect(() => {
-    fetch('src/data/route.geojson') // Path to your external GeoJSON file
+    fetch('/route.geojson') // Path to your external GeoJSON file
       .then((response) => response.json())  // Parse the JSON response
       .then((data) => setGeoData(data))     // Set the data in state
       .catch((error) => console.error('Error loading GeoJSON:', error)); // Handle errors
