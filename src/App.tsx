@@ -20,7 +20,7 @@ L.Icon.Default.mergeOptions({
 });
 
 const App: React.FC = () => {
-  const position: [number, number] = [51.49354740842114, -0.2372724997073291];
+  const position: [number, number] = [51.53564440121904, -0.21102823597520384];
   const [geoData, setGeoData] = useState<any>(null);
 
   const [menuOpen, setMenuOpen] = useState(false); // State to manage mobile menu
