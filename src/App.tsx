@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, Marker, Popup, GeoJSON } from 'react-leaflet';
 import L from 'leaflet';
 
-import 'leaflet/dist/leaflet.css'; // Import Leaflet CSS first
-import './App.css'; // Then your custom CSS
+import 'leaflet/dist/leaflet.css';
+import './App.css';
 
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
@@ -11,7 +11,6 @@ import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
 import { markersWithIcons } from './data/markersWithIcons';
 
-// Default icon fix for markersmmm
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 
 L.Icon.Default.mergeOptions({
@@ -20,50 +19,87 @@ L.Icon.Default.mergeOptions({
   shadowUrl: markerShadow,
 });
 
-////
-
 const App: React.FC = () => {
-
   const position: [number, number] = [51.49354740842114, -0.2372724997073291];
-
   const [geoData, setGeoData] = useState<any>(null);
 
-  // Fetch the GeoJSON data from the public folder
+  const [menuOpen, setMenuOpen] = useState(false); // State to manage mobile menu
+
   useEffect(() => {
-    fetch('/route.geojson') // Path to your external GeoJSON file
-      .then((response) => response.json())  // Parse the JSON response
-      .then((data) => setGeoData(data))     // Set the data in state
-      .catch((error) => console.error('Error loading GeoJSON:', error)); // Handle errors
+    fetch('/route.geojson')
+      .then((response) => response.json())
+      .then((data) => setGeoData(data))
+      .catch((error) => console.error('Error loading GeoJSON:', error));
   }, []);
 
   return (
-    <div className="App" style={{ height: '100vh', width: '100%' }}>
-      <MapContainer center={position} zoom={13} scrollWheelZoom={true} style={{ height: '100%', width: '100%' }}>
-        <TileLayer
-          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">
-            OpenStreetMap
-          </a> contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+    <div className="App">
+      {/* Header Section */}
+      <header className="app-header">
+        <h1>UNVEILING THE HERITAGE:
+          KRYSTYNA BEDNARCZYK
+          (1923–2011)</h1>
+        {/* Hamburger icon for mobile */}
+        <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+          ☰
+        </div>
 
-        {markersWithIcons.map((marker) => (
-          <Marker key={marker.id} position={marker.position} icon={marker.customIcon}>
-            {marker.popup && <Popup>{marker.popup}</Popup>}
-          </Marker>
-        ))}
+        <nav className={`menu ${menuOpen ? 'open' : ''}`}>
+          <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
+          <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+          <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+        </nav>
+      </header>
 
-        {geoData && (
-          <GeoJSON
-            data={geoData}
-            style={{
-              color: '#BD60A5',   // Line color set to #BD60A5
-              weight: 10,           // Line thickness
-              opacity: 0.8         // Line opacity
-            }}
+      {/* Map Frame */}
+      <div className="map-frame">
+        <MapContainer
+          center={position}
+          zoom={12.5}
+          scrollWheelZoom={true}
+          style={{ height: '100%', width: '100%' }}
+        >
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">
+              OpenStreetMap
+            </a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
           />
-        )}
 
-      </MapContainer>
+          {markersWithIcons.map((marker) => (
+            <Marker key={marker.id} position={marker.position} icon={marker.customIcon}>
+              {marker.popup && <Popup>{marker.popup}</Popup>}
+            </Marker>
+          ))}
+
+          {geoData && (
+            <GeoJSON
+              data={geoData}
+              style={{
+                color: '#BD60A5',
+                weight: 10,
+                opacity: 0.8,
+              }}
+            />
+          )}
+        </MapContainer>
+      </div>
+
+       {/* Footer Section */}
+       <footer className="app-footer">
+        <div className="footer-logos">
+          <img src="/logo1.png" alt="Logo 1" />
+          <img src="/logo2.png" alt="Logo 2" />
+          <img src="/logo3.png" alt="Logo 3" />
+        </div>
+        <p>&copy; 2023 Map Viewer. All rights reserved.</p>
+        <nav className="footer-links">
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+          <a href="#support">Support</a>
+        </nav>
+      </footer>
+
     </div>
   );
 };

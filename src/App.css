@@ -5,7 +5,7 @@ body,
 html,
 #root,
 .App {
-  height: 100%;
+  height: 100vh;
   margin: 0;
   padding: 0;
   font-family: "Crimson Pro", serif;
@@ -15,9 +15,11 @@ html,
 
 .App {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: #f9f9f9;
+  
   /* Light background for contrast */
 }
 
@@ -30,6 +32,7 @@ html,
   /* Rounded corners */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   /* Subtle shadow for depth */
+  border: none;
 }
 
 /* Optional: Hover effect to adjust filters */
@@ -53,3 +56,125 @@ html,
   filter: brightness(90%) blur(1px) contrast(90%) saturate(90%) sepia(70%);
 }
 
+/* App.css */
+
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* App container */
+
+/* Header styles */
+.app-header {
+  width: 100%;
+  padding: 20px;
+  background-color: #333;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.app-header h1 {
+  font-size: 1.5rem;
+}
+
+
+
+/* Menu styles */
+.menu {
+  display: flex;
+  gap: 15px;
+}
+
+.menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.menu a:hover {
+  text-decoration: underline;
+}
+
+/* Hide menu and show hamburger on small screens */
+.hamburger {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .menu {
+    display: none; /* Hide menu by default */
+    flex-direction: column;
+    background-color: #333;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 999; /* Ensure menu appears over other content */
+    width: 200px; /* Optional: set a fixed width for mobile menu */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Add shadow for a popup effect */
+  }
+
+  .menu.open {
+    display: flex; /* Show menu when open */
+  }
+
+  .hamburger {
+    display: block; /* Show hamburger icon on small screens */
+  }
+}
+
+/* Map frame styles */
+.map-frame {
+  flex-grow: 1;
+  width: calc(100% - 50px); /* Adjust width to account for left and right margins */
+  height: calc(100% - 500px); /* Adjust height to account for top and bottom margins */
+  margin: 25px; /* Consistent 30px margin on all sides */
+  border: none; /*2px solid #333;*/
+}
+/* Footer styles */
+.app-footer {
+  width: 100vw;      /* Full viewport width */
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 10px;
+
+}
+
+.footer-logos {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.footer-logos img {
+  width: 50px;
+  height: auto;
+  margin: 0 10px;
+}
+
+.app-footer p {
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,39 @@
+.
+├── README.md
+├── cleanGeoJSON.js
+├── index.html
+├── package-lock.json
+├── package.json
+├── public
+│   ├── assets
+│   │   └── markers
+│   │       ├── agenda.png
+│   │       ├── dom-bednarczykow.png
+│   │       ├── dom-pisarza.png
+│   │       ├── krematorium.png
+│   │       ├── oficyna-poetow-malarzy.png
+│   │       ├── posk.png
+│   │       └── topolski-studio.png
+│   └── route.geojson
+├── src
+│   ├── App.css
+│   ├── App.tsx
+│   ├── data
+│   │   ├── markers.tsx
+│   │   ├── markersWithIcons.ts
+│   │   └── route.ts
+│   ├── index.css
+│   ├── main.tsx
+│   ├── types
+│   │   ├── MarkerData.ts
+│   │   └── declarations.d.ts
+│   ├── utils
+│   │   ├── createCustomIcon.ts
+│   │   └── createIcon.ts
+│   └── vite-env.d.ts
+├── structure.txt
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+
+8 directories, 29 files
