@@ -85,20 +85,25 @@ const App: React.FC = () => {
         </MapContainer>
       </div>
 
-       {/* Footer Section */}
-       <footer className="app-footer">
+      {/* Footer Section */}
+      <footer className="app-footer">
         <div className="footer-logos">
-          <img src="/logo1.png" alt="Logo 1" />
-          <img src="/logo2.png" alt="Logo 2" />
-          <img src="/logo3.png" alt="Logo 3" />
+          <img src="/assets/logo/logo_heritage_fund.png" alt="Logo 1" className="logo-primary" />
+          <div className="footer-logos-row">
+            <img src="/assets/logo/logo_oficyna_biale.png" alt="Logo 2" />
+            <img src="/assets/logo/logo_ZPPnO_London.png" alt="Logo 3" />
+          </div>
         </div>
-        <p>&copy; 2023 Map Viewer. All rights reserved.</p>
-        <nav className="footer-links">
+        <p>&copy; 2023 BLUE POINT ART (NOT FOR PROFIT) LTD. All rights reserved.</p>
+
+        {/* Footer links <nav className="footer-links">
           <a href="#privacy">Privacy Policy</a>
           <a href="#terms">Terms of Service</a>
           <a href="#support">Support</a>
-        </nav>
+        </nav> */}
+       
       </footer>
+
 
     </div>
   );
