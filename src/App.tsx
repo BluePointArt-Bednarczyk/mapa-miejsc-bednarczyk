@@ -20,6 +20,8 @@ L.Icon.Default.mergeOptions({
   shadowUrl: markerShadow,
 });
 
+////
+
 const App: React.FC = () => {
 
   const position: [number, number] = [51.49354740842114, -0.2372724997073291];
