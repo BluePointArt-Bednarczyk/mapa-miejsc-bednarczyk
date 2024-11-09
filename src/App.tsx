@@ -13,6 +13,8 @@ import { markersWithIcons } from './data/markersWithIcons';
 
 delete (L.Icon.Default.prototype as any)._getIconUrl;
 
+
+
 L.Icon.Default.mergeOptions({
   iconRetinaUrl: markerIcon2x,
   iconUrl: markerIcon,
@@ -39,6 +41,7 @@ const App: React.FC = () => {
         <h1>UNVEILING THE HERITAGE:
           KRYSTYNA BEDNARCZYK
           (1923–2011)</h1>
+
         {/* Hamburger icon for mobile */}
         <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
           ☰
@@ -50,6 +53,7 @@ const App: React.FC = () => {
           <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
         </nav>
       </header>
+     
 
       {/* Map Frame */}
       <div className="map-frame">
@@ -101,7 +105,7 @@ const App: React.FC = () => {
           <a href="#terms">Terms of Service</a>
           <a href="#support">Support</a>
         </nav> */}
-       
+
       </footer>
 
 
